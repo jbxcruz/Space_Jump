@@ -1,0 +1,112 @@
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background: linear-gradient(180deg, #1a2b40, #0d1a26); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    padding: 0;
+}
+
+
+#starCanvas {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+#board {
+    z-index: 2;
+    border: 5px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 25px rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    background: rgba(30, 45, 60, 0.9); 
+    position: relative;
+}
+
+.title {
+    position: absolute;
+    top: 5%; 
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffc857; 
+    text-shadow: 0 0 10px rgba(255, 200, 87, 0.8), 0 0 20px rgba(255, 200, 87, 0.5);
+    width: 100%;
+}
+
+.instructions {
+    position: absolute;
+    bottom: 5%; 
+    text-align: center;
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    opacity: 0.95;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); 
+    width: 100%;
+    padding: 0 20px;
+}
+
+
+.planet {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url('https://i.imgur.com/kU6D1VR.png') no-repeat;
+    background-size: cover;
+    opacity: 0.8;
+    filter: brightness(0.9); 
+}
+
+.planet.top-left {
+    top: 5%;
+    left: 5%;
+    animation: float 6s infinite ease-in-out;
+}
+
+.planet.bottom-right {
+    bottom: 5%;
+    right: 5%;
+    animation: float 8s infinite ease-in-out reverse;
+}
+
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+canvas {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: #ffffff; 
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7); 
+}
+
+
+.score {
+    color: #ffffff;
+    font-size: 18px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+}
+
+.game-over {
+    color: #ffc857;
+    font-size: 16px;
+    text-shadow: 0 0 10px rgba(255, 200, 87, 0.7); 
+}
